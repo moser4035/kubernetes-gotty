@@ -1,11 +1,11 @@
 #!/bin/bash
 
 
-PARAMS="--permit-write"
+PARAMS="--permit-write --permit-arguments"
 
 if [[ -n $BASIC_AUTH_USER || -n $BASIC_AUTH_PASS ]]; then
 	PARAMS="$PARAMS --credential $BASIC_AUTH_USER:$BASIC_AUTH_PASS"
 fi
 
-gotty $PARAMS '/bin/bash kc top pods'
+gotty $PARAMS /bin/bash
 
